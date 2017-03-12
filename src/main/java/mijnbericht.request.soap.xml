@@ -1,0 +1,44 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <req:windmolenrequest>
+            <windsnelheid>11</windsnelheid>
+        </req:windmolenrequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">
+<soapenv:Header/>
+<soapenv:Body>
+    <req:windmolenrequest>
+        <windsnelheid>33</windsnelheid>
+    </req:windmolenrequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">
+<soapenv:Header/>
+<soapenv:Body>
+    <req:windmolenrequest>
+        <windsnelheid>0</windsnelheid>
+    </req:windmolenrequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">
+<soapenv:Header/>
+<soapenv:Body>
+    <req:windmolenrequest>
+        <windsnelheid>420</windsnelheid>
+    </req:windmolenrequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">
+<soapenv:Header/>
+<soapenv:Body>
+    <req:windmolenrequest>
+        <windsnelheid>3</windsnelheid>
+    </req:windmolenrequest>
+</soapenv:Body>
+</soapenv:Envelope>

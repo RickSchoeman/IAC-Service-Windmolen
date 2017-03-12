@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="63ccc525-5e8e-476c-a47e-3453c80b807c" activeEnvironment="Default" name="Windmolen" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="43ecee5f-2516-4fe6-a054-309084a6d068" wsaVersion="NONE" name="WS-Binding" type="wsdl" bindingName="{http://schemas.hu.fnt.nl/berichten/message}WS-Binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/ricks/Documents/SCHOOL/Windmolen/src/WindmolenService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\ricks\Documents\SCHOOL\Windmolen\src\WindmolenService.wsdl"><con:part><con:url>file:\C:\Users\ricks\Documents\SCHOOL\Windmolen\src\WindmolenService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://schemas.hu.fnt.nl/berichten/message" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:req="http://schemas.hu.fnt.nl/berichten/request" xmlns:rsp="http://schemas.hu.fnt.nl/berichten/response" xmlns:tns="http://schemas.hu.fnt.nl/berichten/message">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://schemas.hu.fnt.nl/berichten/request" schemaLocation="WindmolenRequest.xsd"/>
+      <xsd:import namespace="http://schemas.hu.fnt.nl/berichten/response" schemaLocation="WindmolenResponse.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="request">
+    <wsdl:part name="request" element="req:windmolenrequest"/>
+  </wsdl:message>
+  <wsdl:message name="response">
+    <wsdl:part name="response" element="rsp:windmolenresponse"/>
+  </wsdl:message>
+  <wsdl:portType name="WS-Interface">
+    <wsdl:operation name="calculatePower">
+      <wsdl:input message="tns:request"/>
+      <wsdl:output message="tns:response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS-Binding" type="tns:WS-Interface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="calculatePower">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="mijnService">
+    <wsdl:port name="WS-Port" binding="tns:WS-Binding">
+      <soap:address location="http://localhost:8081/ws-producer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\ricks\Documents\SCHOOL\Windmolen\src\WindmolenRequest.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://schemas.hu.fnt.nl/berichten/request" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.hu.fnt.nl/berichten/request">
+  <xs:element name="windmolenrequest" type="tns:request"/>
+  <xs:complexType name="request">
+    <xs:all minOccurs="1">
+      <xs:element name="windsnelheid" type="xs:positiveInteger"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\ricks\Documents\SCHOOL\Windmolen\src\WindmolenResponse.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://schemas.hu.fnt.nl/berichten/response" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.hu.fnt.nl/berichten/response">
+  <xs:element name="windmolenresponse" type="tns:response"/>
+  <xs:complexType name="response">
+    <xs:all minOccurs="1">
+      <xs:element name="result" type="xs:integer"/>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/ws-producer</con:endpoint></con:endpoints><con:operation id="9c30b89f-b3ee-495a-b430-f9cb93773ad0" isOneWay="false" action="" name="calculatePower" bindingOperationName="calculatePower" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0886bf9b-76b1-4b2a-ab1f-82eeeae81897" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws-producer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:windmolenrequest>\r
+         <windsnelheid>11</windsnelheid>\r
+      </req:windmolenrequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/calculatePowerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="34805490-9ae1-468e-a864-7435e70dea63" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="eb8465d0-5ef2-4901-8135-37890ff46b9f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="75090b19-439b-4793-b32b-14474c61f014" name="calculatePower - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WS-Binding</con:interface><con:operation>calculatePower</con:operation><con:request name="calculatePower - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="185e1454-6dd4-47c4-9a22-3ec28b733afe"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws-producer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:windmolenrequest>\r
+         <windsnelheid>11</windsnelheid>\r
+      </req:windmolenrequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2ffed665-06d6-40cb-9794-74ead3b56e8a" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/calculatePowerRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0f6ab97f-4b99-45b6-83fd-cb90b2a83945" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:settings/><con:testStep type="request" id="94bbf436-6a4e-4189-aa57-b8aa81fe08d0" name="calculatePower - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WS-Binding</con:interface><con:operation>calculatePower</con:operation><con:request name="calculatePower - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="f538f1b7-a67f-4765-815c-cf29039640a3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws-producer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:windmolenrequest>\r
+         <windsnelheid>33</windsnelheid>\r
+      </req:windmolenrequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="327f1751-e02f-4171-bdb9-e288f9c810bc" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/calculatePowerRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="948dc02d-f9b5-4b3c-8468-56c9bac4dcec" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true"><con:settings/><con:testStep type="request" id="f5b99742-218d-41da-8582-0aa24129cc8f" name="calculatePower - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WS-Binding</con:interface><con:operation>calculatePower</con:operation><con:request name="calculatePower - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="ab6f764d-a390-46d0-8b3d-44fcf9fd597a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws-producer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:windmolenrequest>\r
+         <windsnelheid>0</windsnelheid>\r
+      </req:windmolenrequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e41b6e50-85c8-470b-ac83-ddda6d371946" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/calculatePowerRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="54faafad-56d4-4460-a6f2-551721b57a6b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 4" searchProperties="true"><con:settings/><con:testStep type="request" id="3676e30a-661d-43ee-a6d4-609fd65e8e55" name="calculatePower - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WS-Binding</con:interface><con:operation>calculatePower</con:operation><con:request name="calculatePower - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="05b2a058-0e6a-46bc-8545-903be6951e53"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws-producer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:windmolenrequest>\r
+         <windsnelheid>420</windsnelheid>\r
+      </req:windmolenrequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4f84c1d1-2d08-4b83-9bf6-8e3b4b0cb8e3" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/calculatePowerRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="af96cf0a-d238-4a3f-ba35-164aa8168ea6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 5" searchProperties="true"><con:settings/><con:testStep type="request" id="885e57aa-9468-4fc7-9525-75ffa40f7d4e" name="calculatePower - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WS-Binding</con:interface><con:operation>calculatePower</con:operation><con:request name="calculatePower - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="cebd9a05-f4aa-4f15-b9b8-ed8834acc9bf"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/ws-producer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:req="http://schemas.hu.fnt.nl/berichten/request">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <req:windmolenrequest>\r
+         <windsnelheid>3</windsnelheid>\r
+      </req:windmolenrequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="dd1cd1ce-7267-469f-80c0-90b41e4f64de" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schemas.hu.fnt.nl/berichten/message/WS-Interface/calculatePowerRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

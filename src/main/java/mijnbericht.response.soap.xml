@@ -1,0 +1,39 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns3:windmolenresponse xmlns:ns2="http://schemas.hu.fnt.nl/berichten/request" xmlns:ns3="http://schemas.hu.fnt.nl/berichten/response">
+            <result>2991</result>
+        </ns3:windmolenresponse>
+    </S:Body>
+</S:Envelope>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+    <ns3:windmolenresponse xmlns:ns2="http://schemas.hu.fnt.nl/berichten/request" xmlns:ns3="http://schemas.hu.fnt.nl/berichten/response">
+        <result>80779</result>
+    </ns3:windmolenresponse>
+</S:Body>
+</S:Envelope>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+    <ns3:windmolenresponse xmlns:ns2="http://schemas.hu.fnt.nl/berichten/request" xmlns:ns3="http://schemas.hu.fnt.nl/berichten/response">
+        <result>0</result>
+    </ns3:windmolenresponse>
+</S:Body>
+</S:Envelope>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+    <ns3:windmolenresponse xmlns:ns2="http://schemas.hu.fnt.nl/berichten/request" xmlns:ns3="http://schemas.hu.fnt.nl/berichten/response">
+        <result>166535713</result>
+    </ns3:windmolenresponse>
+</S:Body>
+</S:Envelope>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+<S:Body>
+    <ns3:windmolenresponse xmlns:ns2="http://schemas.hu.fnt.nl/berichten/request" xmlns:ns3="http://schemas.hu.fnt.nl/berichten/response">
+        <result>60</result>
+    </ns3:windmolenresponse>
+</S:Body>
+</S:Envelope>
